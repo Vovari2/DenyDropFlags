@@ -9,7 +9,7 @@ public final class DenyDropFlags extends JavaPlugin {
 
     @Override
     public void onLoad(){
-        WorldGuardUtils.load();
+        Utils.load();
     }
 
     @Override
@@ -17,8 +17,8 @@ public final class DenyDropFlags extends JavaPlugin {
         version = getPluginMeta().getVersion();
         consoleSender = getServer().getConsoleSender();
 
-        WorldGuardUtils.enable();
-        getServer().getPluginManager().registerEvents(new EventListeners(), this);
+        Utils.enable();
+        getServer().getPluginManager().registerEvents(new Listeners(), this);
 
         Text.sendInfoMessage("<green>Plugin v" + version + " enabled!");
     }

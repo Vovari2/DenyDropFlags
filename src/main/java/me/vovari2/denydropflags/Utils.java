@@ -14,7 +14,7 @@ import org.bukkit.World;
 
 import java.util.Set;
 
-public class WorldGuardUtils {
+public class Utils {
 
     private static WorldGuardPlatform platform;
     private static SetFlag<ItemType> DENY_DROP_ENTITIES;

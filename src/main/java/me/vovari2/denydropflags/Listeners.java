@@ -13,17 +13,17 @@ import org.bukkit.event.entity.EntityDeathEvent;
 
 import java.util.Set;
 
-public class EventListeners implements Listener {
+public class Listeners implements Listener {
 
     @EventHandler
     public void addItemInDroppedItemsToEntityDeath(EntityDeathEvent event){
         Entity entity = event.getEntity();
-        WorldConfiguration worldConfiguration = WorldGuardUtils.getWorldConfiguration(entity.getWorld());
+        WorldConfiguration worldConfiguration = Utils.getWorldConfiguration(entity.getWorld());
         if (!worldConfiguration.useRegions)
             return;
 
         Location location = entity.getLocation();
-        Set<ItemType> itemTypes = WorldGuardUtils.getItemsInFlagOfDenyDropEntities(location);
+        Set<ItemType> itemTypes = Utils.getItemsInFlagOfDenyDropEntities(location);
         if (itemTypes == null)
             return;
 
@@ -33,11 +33,11 @@ public class EventListeners implements Listener {
     @EventHandler
     public void addItemInDroppedItemsToBreakBlock(BlockDropItemEvent event){
         Block block = event.getBlock();
-        WorldConfiguration worldConfiguration = WorldGuardUtils.getWorldConfiguration(block.getWorld());
+        WorldConfiguration worldConfiguration = Utils.getWorldConfiguration(block.getWorld());
         if (!worldConfiguration.useRegions)
             return;
 
-        Set<ItemType> itemTypes = WorldGuardUtils.getItemsInFlagOfDenyDropBlocks(block.getLocation());
+        Set<ItemType> itemTypes = Utils.getItemsInFlagOfDenyDropBlocks(block.getLocation());
         if (itemTypes == null)
             return;
 
