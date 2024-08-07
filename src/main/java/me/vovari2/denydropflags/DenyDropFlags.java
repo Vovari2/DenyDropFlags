@@ -15,17 +15,17 @@ public final class DenyDropFlags extends JavaPlugin {
     @Override
     public void onEnable() {
         version = getPluginMeta().getVersion();
-        consoleSender = getConsoleSender();
+        consoleSender = getServer().getConsoleSender();
 
         WorldGuardUtils.enable();
         getServer().getPluginManager().registerEvents(new EventListeners(), this);
 
-        Text.sendInfoMessage("Plugin v" + version + " enabled!");
+        Text.sendInfoMessage("<green>Plugin v" + version + " enabled!");
     }
 
     @Override
     public void onDisable() {
-        Text.sendInfoMessage("Plugin v" + version + " disabled!");
+        Text.sendInfoMessage("<red>Plugin v" + version + " disabled!");
     }
 
 
