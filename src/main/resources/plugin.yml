@@ -1,0 +1,7 @@
+name: DenyDropFlags
+author: Vovari2
+version: '2.0'
+main: me.vovari2.denydropflags.DenyDropFlags
+api-version: '1.20'
+depend:
+  - WorldGuard
